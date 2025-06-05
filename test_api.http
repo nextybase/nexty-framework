@@ -1,0 +1,7 @@
+### Frase valida
+POST http://localhost:5000/frase
+Content-Type: application/json
+
+{
+  "frase": "Luna orbita Terra"
+}
