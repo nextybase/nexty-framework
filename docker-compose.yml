@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  rosetta:
+    build: ./rosetta
+    ports:
+      - "8001:8001"
+    depends_on:
+      - neo4j
+
+  neo4j:
+    image: neo4j:5
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/password
+    volumes:
+      - ./neo4j/conf:/conf
